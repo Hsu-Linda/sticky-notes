@@ -1,0 +1,17 @@
+Todo
+
+1. Create a delete button
+  Notes: I think a for loop could be used here to assign
+  a unique id to each note. Then a button could delete 
+  the individual note based on what the id === 
+  
+2. Make it so that each sticky notes' text can be edited
+  Notes: The for loop from item [1] could be used here to
+  count each note. Then, we have to look at storing the 
+  text that is currently in the note, and then editing it
+  with a prompt or something.
+  
+3. Possible ---- Create a custom prompt box or text area
+  Notes: I would like to create a custom prompt box or te-
+  xt area that looked very clean and fluid in this app. 
+  It would be more intuitive than having a popup prompt.
