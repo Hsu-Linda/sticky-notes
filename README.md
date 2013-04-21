@@ -20,5 +20,6 @@ Below are all of the tools that I have used to complete this project:
 
 ## Developers
 
-Alex Vallorosi ---- Developer ---- @reddog92396
+Alex Vallorosi ---- Developer ---- @reddog92396 
+
 Eric Zhu ---------- Developer ---- @
