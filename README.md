@@ -1,4 +1,4 @@
-# [Sticky Notes.](http://html5boilerplate.com)
+# [Sticky Notes.](#)
 
 Sticky Notes is a web application that was written primarily as a tool to learn Javascript and jQuery. 
 
