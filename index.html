@@ -23,47 +23,44 @@
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
-        
+
         <!-- Propery for draggable set to true, Dropzone. This ex. this.isdropped -- item has been dropped -->
 
         <!-- Content -->
         <div id="main_content">
-        <span><h1 style="margin-left:50px;display:inline;float:left;margin-top:35px;">Sticky Notes.</h1>
-        <h3><a href="#about" style="float:left;margin-left:50px;margin-top:46px;" id="nav_about">About</a></h3></span>
-        
-        <br /><br /><br /><br /><br />
-        
-     	<div class="button">+ New Sticky</div>
-          
-     	
-        <div id="squarecontainer"></div>
-        
-        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+            <span><h1 style="margin-left:50px;display:inline;float:left;margin-top:35px;">Sticky Notes.</h1>
+            <h3><a href="#about" style="float:left;margin-left:50px;margin-top:46px;" id="nav_about">About</a></h3></span>
+
+            <br /><br /><br /><br /><br />
+
+         	<div class="button">+ New Sticky</div>
+            <ul id="sticky-list"></ul>
         </div>
-        
-        <div style="display:block;" id="about"><span><h1 style="margin-left:50px;display:inline;float:left;margin-top:35px;">About.</h1>
-        <h3><a href="#main_content" style="float:left;margin-left:50px;margin-top:46px;" id="nav_home">Home</a></h3></span>
-        
-         <br /><br /><br /><br /><br />
-        
-        <p style="margin-left:50px;margin-right:100px;"> My name is Alex Vallorosi. I created this simple sticky notes demonstration to test different aspects of Javascript. In this project, I have used Boilerplate HTML, along with HTML and CSS. With this project, I also wanted to extensively use CSS instead of image files, so that the elements that I create could scale without pixellating, would not slow down the web server with many large image files, and react more fluidly within the web page. So the button and the sticky notes that you see are made purely with CSS. I owe thanks to the <a href="http://www.cssbuttongenerator.com/">CSS Button Generator</a> for the button that you see on this page. I am currently still developing this web application so it is in beta right now. Work that still needs to be done includes creating a delete button, a more fluid way to write text on the sticky notes, a way to be able to change the text on each sticky note, and possibly even a way to save the sticky notes that you create in a Javascript database! It will also be changed to use jQuery as opposed to vanilla JS. This web app is hosted thanks to the "Public" folder that <a href="www.dropbox.com">Dropbox</a> provides each user. Thanks Dropbox!</p></div>
-        
-        <br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+        <!-- <div style="display:block;" id="about"><span><h1 style="margin-left:50px;display:inline;float:left;margin-top:35px;">About.</h1>
+            <h3><a href="#main_content" style="float:left;margin-left:50px;margin-top:46px;" id="nav_home">Home</a></h3></span>
+
+             <br /><br /><br /><br /><br />
+
+            <p style="margin-left:50px;margin-right:100px;"> My name is Alex Vallorosi. I created this simple sticky notes demonstration to test different aspects of Javascript. In this project, I have used Boilerplate HTML, along with HTML and CSS. With this project, I also wanted to extensively use CSS instead of image files, so that the elements that I create could scale without pixellating, would not slow down the web server with many large image files, and react more fluidly within the web page. So the button and the sticky notes that you see are made purely with CSS. I owe thanks to the <a href="http://www.cssbuttongenerator.com/">CSS Button Generator</a> for the button that you see on this page. I am currently still developing this web application so it is in beta right now. Work that still needs to be done includes creating a delete button, a more fluid way to write text on the sticky notes, a way to be able to change the text on each sticky note, and possibly even a way to save the sticky notes that you create in a Javascript database! It will also be changed to use jQuery as opposed to vanilla JS. This web app is hosted thanks to the "Public" folder that <a href="www.dropbox.com">Dropbox</a> provides each user. Thanks Dropbox!</p></div>
+
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /> -->
         <div id="footer">
             <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0;margin-left:auto;margin-right:auto;" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a><br /><br />
             <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Sticky Notes.</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution 3.0 Unported License</a>.
         </div>
 
 
+        <script type="text/template" id="stickynote">
+            <div class="square ui-widget-content ui-draggable"><p class="note-text"><%= this.model.text %></p></div>
+        </script>
 
-        <!-- Not completed ---- JS Menu -->
-        <!--<div id="circle" onclick="showMenu();"></div></span>
-        <div id="roundedrectangle"><div id="menuitem"><p style="color:white;text-align:center;">Menu Item 1</p></div></div>-->
-        
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
+
+        <script src="js/vendor/jquery.js"></script>
+        <script src="js/vendor/underscore.js"></script>
+        <script src="js/vendor/backbone.js"></script>
+        <script src="js/vendor/backbone.localStorage.js"></script>
+        <script src="js/vendor/jquery-ui.js"></script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID.
